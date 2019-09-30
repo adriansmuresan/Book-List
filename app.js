@@ -77,6 +77,9 @@ document.getElementById('book-form').addEventListener('submit',
       // Add  book to list
     ui.addBookToList(book);
 
+    // Show success
+    ui.showAllert('Book Added!', 'success')
+
     // Clear fields
     ui.clearFields();
     }
