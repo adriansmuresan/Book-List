@@ -35,6 +35,17 @@ UI.prototype.showAllert = function(message, className) {
   div.className = `alert ${className}`;
   // Add text
   div.appendChild(document.createTextNode(message));
+  // Get parrent
+  const container = document.querySelector('.container');
+  // Get form
+  const form = document.querySelector('#book-form');
+  // Insert alert
+  container.insertBefore(div, form);
+
+  // Timeout after 3 sec
+  setTimeout(function() {
+    document.querySelector('.alert').remove();
+  }, 3000);
 }
 
 // Clear fileds
@@ -61,8 +72,7 @@ document.getElementById('book-form').addEventListener('submit',
     // Validation
     if(title === ''|| author === '' || isbn === '') {
       // Error alert
-      UI.showAllert('Please fiil in all the fields', 'error');
-      );
+      ui.showAllert('Please fiil in all the fields', 'error');
     } else {
       // Add  book to list
     ui.addBookToList(book);
