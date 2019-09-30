@@ -10,6 +10,10 @@ function UI() {
 
 }
 
+UI.prototype.addBookToList = function(book) {
+  console.log(book);
+}
+
 // Event Listeners
 document.getElementById('book-form').addEventListener('submit', 
   function(e) {
